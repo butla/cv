@@ -1,0 +1,191 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.11 (19/6/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same 
+% directory as this .tex file. These files provide the resume style and themes 
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{green} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[utf8x]{inputenc} % for polish letters
+\usepackage[polish]{babel} % also for polish letters
+
+\usepackage[scale=0.75]{geometry} % Reduce document margins
+\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{Michał} % Your first name
+\familyname{Bultrowicz} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+\title{Curriculum Vitae}
+\address{Danusi 5/3}{80-434 Gdańsk}{Poland}
+\mobile{(+48) 790467660}
+\email{michal.bultrowicz@gmail.com}
+\homepage{bultrowicz.com/}{https://bultrowicz.com/} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+\photo[100pt][0.3pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makecvtitle % Print the CV title
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\cventry{2012--2015}{Master of Science in Computer Science}{Gdańsk University of Technology}{}{\textit{Overall score -- good plus}}{Specialized in Intelligent Interactive Systems}  % Arguments not required can be left empty
+\cventry{2008--2012}{Bachelor of Science in Computer Science}{Gdańsk University of Technology}{}{\textit{Overall score -- good plus}}{}
+
+\section{Masters Thesis}
+
+\cvitem{Title}{\emph{Calling remote Java methods in Android system from .NET platform}}
+\cvitem{Supervisor}{Jacek Lebiedź, PhD MEng}
+\cvitem{Description}{The goal of this work was to create a set of libraries that would enable convenient remote code execution in Android system from .NET platform. The work was successful and had the side-effect of an upstream patch on \texttt{jsonrpc4j} library, enabling it to work on Android.}
+
+%----------------------------------------------------------------------------------------
+%	CONFERENCE TALKS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Conference talks}
+
+\cventry{July 2016}{TDD of Python microservices}{\textsc{EuroPython 2016}}{}{}{Presentation of tools (some implemented by me) and solutions that enable Test-Driven Development of Python microservices. Told from the perspective of a maintainer of a single service. Available on YouTube.}
+\cventry{July 2015}{Python microservices on PaaS done right}{\textsc{EuroPython 2015}}{}{}{A a collection of tips and practices that allow to have a successful microservices-based project. Concerns development, testing and work organization. There's a slight focus on Python. Available on YouTube.}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\cventry{March 2014 -- April 2016}{Software Applications Developer}{\textsc{Intel Technology Poland}}{Gdańsk}{}{
+Examples of assignments on this position, from the latest:
+\begin{itemize}
+\item \emph{Leading a development team} I lead one of the teams that worked on Trusted Analytics Platform (TAP) project. TAP is a PaaS platform with main focus on data analytics.
+My team mainly did the integration of other teams' work, we overseen builds, deployments, releases and utility tools, but we also developed some backend microservices.
+I was responsible for planning, estimating and coordinating work, also teaching and mentoring of other team members.
+Furthermore I:
+\begin{itemize}
+    \item acted as Python expert for all project teams;
+    \item created \texttt{mountepy} Python library to aid isolated microservice tests and increase our quality;
+    \item influenced development procedures for all teams;
+    \item enforced software legal compliance and communicated with lawyers.
+\end{itemize}
+\item \emph{Backend microservices' development for TAP} I developed a few Spring Boot (Java) microservices and created one in Python. It was a data set indexing and search service backed by ElasticSearch. We used Cloud Foundry PaaS as a base for our applications. Sometimes there was a need to fiddle with virtual machines on which Cloud Foundry cluster was based on.
+\item \emph{Maintenance of a secure backend for remote firmware updates} We had a quite mature distributed system, encompassing C\# backend services, ASP.NET frontend, a C++ server and a C++ client.
+The whole system was based on EPID digital signature scheme.
+I had to deliver patches to almost all of the application-layer components and do deployments to a large infrastructure spread out geographically. I also needed to run tests that touched everything from firmware on a client machine, through its drivers and application level software up to multi-tier backend services and ending at server HSMs (Hardware Security Modules).
+\item \emph{Implementing hardware-backed secure tunnels for certificate exchange} I needed to create a C++11 application for embedded Linux that could create, manage and transfer X.509 certificates. The certificates' private keys and the keys used to secure the connection to transfer them were created and stored in a hardware cryptography module (TPM). OpenSSL and TrouSerS were used for setup of MTLS (TLS with authentication of both parties) connections.
+\end{itemize}}
+
+%------------------------------------------------
+
+\cventry{May 2011 -- February 2014}{Test Engineer Intern}{\textsc{Intel Technology Poland}}{Gdańsk}{}{
+I maintained and developed a heterogeneous (Windows, Linux, Android) distributed framework for automated software, firmware and hardware testing. I've coded mainly in C\# and Java (SE and Android versions), but I've helped myself with Python scripting.
+My main focus was designing and implementing a versatile RPC-style communication between applications on different platforms (used WCF, JAX-WS and my own protocol for Android). There was a tight collaboration with our client - the validation teams.
+Solving some problems required knowledge of obscure inner workings of .NET, Java and Windows system (e.g. discrepancies in implementations of TCP sockets on both programming platforms).}
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{Computer skills}
+
+\cvitem{--}{Advanced Python programming.}
+\cvitem{--}{Secondary languages: Java, C\#, C++, Bash.}
+\cvitem{--}{Creating heterogeneous distributed applications using REST and Web Services.}
+\cvitem{--}{Development and testing of microservice-based solutions.}
+\cvitem{--}{Advanced GIT usage.}
+\cvitem{--}{Implementing system security.}
+\cvitem{--}{Focus on Test Driven Development.}
+\cvitem{--}{Implementing Continuous Delivery.}
+\cvitem{--}{Working with Linux (preferred) and Windows operating systems.}
+\cvitem{--}{Using Docker and Vagrant.}
+\cvitem{--}{Configuration management with Ansible.}
+\cvitem{--}{Documenting APIs with Swagger.}
+
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL SKILLS
+%----------------------------------------------------------------------------------------
+
+\section{Additional Skills}
+
+\cvitem{--}{Working in and coordinating a SCRUM team.}
+\cvitem{--}{Working in a Kanban team.}
+\cvitem{--}{Knowledge of software legal compliance and licensing issues.}
+\cvitem{--}{Driving License (valid in European Union)}
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Languages}
+
+\cvitemwithcomment{Polish}{Native}{}
+\cvitemwithcomment{English}{Very good}{Can communicate freely in writing and speech}
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Interests}
+
+\renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
+
+\cvlistdoubleitem{Technology}{Philosophy}
+\cvlistdoubleitem{Martial arts}{Evolutionary Psychology}
+\cvlistdoubleitem{Military history}{Slavic and Nordic mythology}
+
+%----------------------------------------------------------------------------------------
+%	COVER LETTER
+%----------------------------------------------------------------------------------------
+
+% To remove the cover letter, comment out this entire block
+
+%\clearpage
+%
+%\recipient{HR Department}{Corporation\\123 Pleasant Lane\\12345 City, State} % Letter recipient
+%\date{\today} % Letter date
+%\opening{Dear Sir or Madam,} % Opening greeting
+%\closing{Sincerely yours,} % Closing phrase
+%\enclosure[Attached]{curriculum vit\ae{}} % List of enclosed documents
+%
+%\makelettertitle % Print letter title
+%
+%\lipsum[1-3] % Dummy text
+%
+%\makeletterclosing % Print letter signature
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

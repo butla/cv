@@ -46,17 +46,20 @@
 
 % All information in this block is optional, comment out any lines you don't need
 \title{Curriculum Vitae}
-\address{Danusi 5/3}{80-434 Gdańsk}{Poland}
+\address{Ziołowa 8}{40-634 Katowice}{Poland}
 \mobile{(+48) 790467660}
 \email{michal.bultrowicz@gmail.com}
 \homepage{bultrowicz.com/}{https://bultrowicz.com/} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
-\photo[100pt][0.3pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+% It's better not to have the photo sometimes.
+% \photo[100pt][0.3pt]{pictures/picture} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
 
 %----------------------------------------------------------------------------------------
 
 \begin{document}
 
 \makecvtitle % Print the CV title
+
+% % TODO skills - talks - experience - education - interests
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION SECTION
@@ -77,7 +80,7 @@
 %	CONFERENCE TALKS SECTION
 %----------------------------------------------------------------------------------------
 
-\section{Conference talks}
+\section{Notable conference talks}
 
 \cventry{July 2016}{TDD of Python microservices}{\textsc{EuroPython 2016}}{}{}{Presentation of tools (some implemented by me) and solutions that enable Test-Driven Development of Python microservices. Told from the perspective of a maintainer of a single service. Available on YouTube.}
 \cventry{July 2015}{Python microservices on PaaS done right}{\textsc{EuroPython 2015}}{}{}{A a collection of tips and practices that allow to have a successful microservices-based project. Concerns development, testing and work organization. There's a slight focus on Python. Available on YouTube.}
@@ -88,9 +91,28 @@
 
 \section{Experience}
 
-\cventry{March 2017 -- onwards}{Freelance projects}{}{}{}{
+\cventry{May 2017 -- September 2018}{Python back-end developer}{\textsc{Iterio Data}}{Remote}{}{
+My main project was a data pipeline for advertisement campaign and site traffic analysis.
+I worked as the main developer and the de facto architect of the system.
+Later on I also took over the maintenance and design of our cloud infrastructure.
+Other than that I did some ETL and occasional simple data analysis.
+My duties included:
 \begin{itemize}
-\item Python 3.6 GUI application for reporting of manufacturing faults in PCB boards. It extracted data from Excel spreadsheets and Microsoft Access databases.
+    \item creating back-end APIs with Python and stuffing them in Docker containers;
+    \item designing our systems on AWS (ECS, Lambda, Kinesis, S3, SSM);
+    \item encoding our infrastructure and doing deployments with Terraform;
+    \item creating test strategies and tools for our cloud applications;
+    \item helping in the design of our CitusDB (distributed PostgreSQL) schema;
+    \item setting up logging, metrics, and alerts;
+    \item working out our development practices (trunk-based development, zero down-time deployments, etc.);
+\end{itemize}}
+
+%------------------------------------------------
+
+\cventry{March 2017 -- September 2017}{Freelance projects}{}{}{}{
+\begin{itemize}
+\item Python 3.6 Windows GUI application for reporting of manufacturing faults in PCB boards. It merged data from Excel spreadsheets and Microsoft Access databases.
+\item Developing Ansible scripts for the deployment of ScyllaDB.
 \end{itemize}}
 
 %------------------------------------------------
@@ -128,18 +150,19 @@ Solving some problems required knowledge of obscure inner workings of .NET, Java
 
 \section{Computer skills}
 
-\cvitem{--}{Advanced Python programming.}
-\cvitem{--}{Secondary languages: Java, C\#, C++, Bash.}
+\cvitem{--}{Writing advanced but self-explanatory Python code.}
+\cvitem{--}{Secondary languages: Bash, Java, C\#, C++.}
 \cvitem{--}{Working with Flask, Falcon, and AioHTTP frameworks.}
-\cvitem{--}{Creating heterogeneous distributed applications using REST and Web Services.}
+\cvitem{--}{Use of SQL (PostgresSQL, CitusDB) and NoSQL (Redis, ElasticSearch) data stores.}
+\cvitem{--}{Creating heterogeneous distributed applications using REST, Web Services and queues.}
+\cvitem{--}{Managing AWS infrastructure with Terraform.}
 \cvitem{--}{Development and testing of microservice-based solutions.}
-\cvitem{--}{Advanced GIT usage.}
-\cvitem{--}{Implementing system security.}
 \cvitem{--}{Focus on Test Driven Development.}
+\cvitem{--}{Implementing system security, and a workable knowledge of cryptography.}
 \cvitem{--}{Implementing Continuous Delivery.}
-\cvitem{--}{Working with Linux (preferred) and Windows operating systems.}
 \cvitem{--}{Using Docker and Vagrant.}
-\cvitem{--}{Use of SQL and NoSQL (MongoDB, ElasticSearch) data stores.}
+\cvitem{--}{Proficiency in GIT.}
+\cvitem{--}{Working with Linux (preferred) and Windows operating systems.}
 \cvitem{--}{Configuration management with Ansible.}
 \cvitem{--}{Documenting APIs with Swagger.}
 \cvitem{--}{Basic Pandas usage.}
@@ -173,8 +196,8 @@ Solving some problems required knowledge of obscure inner workings of .NET, Java
 \renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
 
 \cvlistdoubleitem{Technology}{Philosophy}
-\cvlistdoubleitem{Martial arts}{Evolutionary Psychology}
-\cvlistdoubleitem{Military history}{Slavic and Nordic mythology}
+\cvlistdoubleitem{History}{Evolutionary Psychology}
+\cvlistdoubleitem{Slavic and Nordic mythology}{Martial arts}
 
 %----------------------------------------------------------------------------------------
 %	COVER LETTER
